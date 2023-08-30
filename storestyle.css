@@ -10,7 +10,7 @@ body {
 }
 
 /* Style the links inside the navigation bar */
-.topnav a, .topnav b {
+.topnav a, #right {
   text-shadow: 0 0 3px #000000, 0 0 5px #000000;
   color: #f2f2f2;
   text-align: center;
@@ -20,7 +20,7 @@ body {
 }
 
 /* Change the color of links on hover */
-.topnav a:hover, .topnav b:hover {
+.topnav a:hover, #right:hover {
   background-color: #ddd;
   color: white;
 }
@@ -29,7 +29,7 @@ body {
     float: left;
 }
 
-.topnav b {
+#right {
     float: right;
 }
 

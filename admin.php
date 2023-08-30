@@ -3,13 +3,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Emils good store</title>
+        <title>Administration</title>
     </head>
     <body>
         <?php include_once "navbar.php"?>
-        <h1>Emils store</h1>
-        <p>Buy what you want.</p>
-        <p>we specialize in everything from computers to screens, we know how important lasagna is, too.</p>
+        <h1>Manage the database and items</h1>
+        <p>Change what you want.</p>
         <div class="footer">
             <p>Emil Juel Korsholms store website, 2023, Version 0.2.</p>
         </div>

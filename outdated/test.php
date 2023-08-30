@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Old test site for DB</title>
     </head>
     <body>
         <h1>Lagersystem</h1>
@@ -24,5 +24,7 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
+        
+                    <a href="../index.php"><h1>Return to start...</h1></a>
 </body>
 </html>
