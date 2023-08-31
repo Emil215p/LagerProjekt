@@ -8,7 +8,7 @@
         <h1>Lagersystem</h1>
         <p>Prototype af et lagersystem med MySQL.</p>
         <p>Ver 0.01</p>
-<?php include_once "../dbconn.php";
+<?php include_once "../dependencies/dbconn.php";
 $sql = "SELECT TestID, Testen, Tester, Tost FROM test";
 $result = $conn->query($sql);
 
