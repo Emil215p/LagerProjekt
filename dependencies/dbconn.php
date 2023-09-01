@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "nytest";
+$username = "emko01_skp-dp_sde_dk";
+$password = "pqk5235q";
+$dbname = "emko01_skp_dp_sde_dk";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
