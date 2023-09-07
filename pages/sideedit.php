@@ -4,8 +4,8 @@ $html = file_get_contents($file); //read the file contents
 $html = htmlentities($html, ENT_QUOTES);
 ?>
         <?php 
-        require_once "dependencies/header_alt.php";
-        require_once "dependencies/navbar.php"?>
+        require_once "../includes/header_alt.php";
+        require_once "../includes/navbar.php"?>
 <script>
 function encode_content(){
   var content = document.getElementById('file_content').value;
@@ -20,5 +20,5 @@ function encode_content(){
   <input type="hidden" name="var" value="<?php echo $file; ?>"/>
   <input type="submit" value="Gem ændringer">
 </form>
-<a href="admin.php">Tilbage</a>
-        <?php require_once "dependencies/footer.php";
+<a href="http://www.emko01.skp-dp.sde.dk/LagerProjekt/pages/admin.php">Tilbage</a>
+        <?php require_once "http://www.emko01.skp-dp.sde.dk/LagerProjekt/includes/footer.php";
