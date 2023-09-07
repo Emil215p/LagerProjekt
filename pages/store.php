@@ -78,7 +78,7 @@ if (!empty($_GET["action"])) {
                                 <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
                                 <td  style="text-align:right;"><?php echo $item["price"] . "kr"; ?></td>
                                 <td  style="text-align:right;"><?php echo number_format($item_price, 2) . "kr"; ?></td>
-                                <td style="text-align:center;"><a href="store.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="images/icon-delete.png" alt="Remove Item" /></a></td>
+                                <td style="text-align:center;"><a href="store.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="../images/icon-delete.png" alt="Remove Item" /></a></td>
                             </tr>
                             <?php
                             $total_quantity += $item["quantity"];
@@ -102,7 +102,7 @@ if (!empty($_GET["action"])) {
             }
             ?>
         </div>
-
+<div style="display: table;">
         <div id="product-grid">
             <div class="txt-heading">Products</div>
             <?php
@@ -125,7 +125,9 @@ if (!empty($_GET["action"])) {
             }
             ?>
         </div>
-    </BODY>
-</HTML>
-        <?php require_once "../includes"
-        . "../includes/footer.php";
+        </div>  
+        <div id="spacer"><p>This text should not be visible.</p></div>
+            <div style="margin: 1px; text-aling: center">
+        <p>This is underneath</p>
+    </div>
+  <?php require_once "../includes/footer.php";

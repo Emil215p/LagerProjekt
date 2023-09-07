@@ -116,3 +116,9 @@
 	clear: both;
 	margin: 38px 0px;
 }
+
+#spacer {
+        color: Beige;
+	padding: 20px;
+        width: 100%;
+}
