@@ -6,11 +6,11 @@
      */
     interface IConnectInfo
     {
-        const CONN_HOST = 'localhost'; // webmin: https://10.136.128.101:10000/
-        const CONN_USER = 'aemk01_skp-dp_sd';
-        const CONN_PASS = 'q452zp4z'; // ny FTP user: skp-admin pass: hrzcoo3jhea7
-        const CONN_DB = 'aemk01_skp_dp_sde_dk';
-        const CONN_PORT = 3306;
+        const CONN_HOST = 'localhost'; //
+        const CONN_USER = 'emko01_skp-dp_sde_dk';
+        const CONN_PASS = 'pqk5235q'; // ny FTP user: skp-admin pass: pqk5235q
+        const CONN_DB = 'emko01_skp_dp_sde_dk';
+        const CONN_PORT = 2222;
         const MYSQL_CHARSET = 'utf8';
         public static function doConnect();
     }

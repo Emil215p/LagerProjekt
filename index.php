@@ -1,7 +1,10 @@
-        <?php 
-        require_once "includes/header.php";
-        require_once "includes/navbar.php" ?>
-        <h1>Emils store</h1>
-        <p>Buy what you want.</p>
-        <p>we specialize in everything from computers to screens, we know how important lasagna is, too.</p>
-        <?php require_once "includes/footer.php";
+<?php
+require_once 'includes/settings.php';
+require_once "includes/header.php";
+require_once "includes/navbar.php";
+if (file_exists($page)) {
+    include_once($page);
+} else {
+    include_once ('pages/404.php');
+}
+require_once "includes/footer.php";

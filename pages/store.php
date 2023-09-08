@@ -1,11 +1,11 @@
 <?php
-require_once "../includes/header.php";
-require_once "../includes/navbar.php"
+require_once "http://www.emko01.skp-dp.sde.dk/LagerProjekt/includes/header.php";
+require_once "http://www.emko01.skp-dp.sde.dk/LagerProjekt/includes/navbar.php"
 ?>
 <h1>Items</h1>
 <p>Buy what you want.</p>
 <?php
-require_once("../includes/dbcontroller.php");
+require_once("http://www.emko01.skp-dp.sde.dk/LagerProjekt/includes/dbcontroller.php");
 $db_handle = new DBController();
 if (!empty($_GET["action"])) {
     switch ($_GET["action"]) {
@@ -48,7 +48,7 @@ if (!empty($_GET["action"])) {
     }
 }
 ?>
-        <link href="../css/storestyle.css" type="text/css" rel="stylesheet" />
+        <link href="http://www.emko01.skp-dp.sde.dk/LagerProjekt/css/storestyle.css" type="text/css" rel="stylesheet" />
         <div id="shopping-cart">
             <div class="txt-heading">Shopping Cart</div>
 
@@ -130,4 +130,4 @@ if (!empty($_GET["action"])) {
             <div style="margin: 1px; text-aling: center">
         <p>This is underneath</p>
     </div>
-  <?php require_once "../includes/footer.php";
+  <?php require_once "http://www.emko01.skp-dp.sde.dk/LagerProjekt/includes/footer.php";

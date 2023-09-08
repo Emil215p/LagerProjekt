@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include_once "../includes/dbconn.php"
+include_once "../LagerProjekt/includes/dbconn.php"
 ?>
 <link rel="stylesheet" href="http://www.emko01.skp-dp.sde.dk/LagerProjekt/css/styleforgeneral.css" type="text/css"> 
 <html>
