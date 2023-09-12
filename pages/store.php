@@ -1,11 +1,11 @@
 <?php
-require_once "http://www.emko01.skp-dp.sde.dk/LagerProjekt/includes/header.php";
-require_once "http://www.emko01.skp-dp.sde.dk/LagerProjekt/includes/navbar.php"
+require_once "includes/header.php";
+require_once "includes/navbar.php"
 ?>
 <h1>Items</h1>
 <p>Buy what you want.</p>
 <?php
-require_once("http://www.emko01.skp-dp.sde.dk/LagerProjekt/includes/dbcontroller.php");
+require_once("includes/dbcontroller.php");
 $db_handle = new DBController();
 if (!empty($_GET["action"])) {
     switch ($_GET["action"]) {
@@ -40,7 +40,7 @@ if (!empty($_GET["action"])) {
                     if (empty($_SESSION["cart_item"]))
                         unset($_SESSION["cart_item"]);
                 }
-            }
+                }
             break;
         case "empty":
             unset($_SESSION["cart_item"]);
@@ -48,11 +48,11 @@ if (!empty($_GET["action"])) {
     }
 }
 ?>
-        <link href="http://www.emko01.skp-dp.sde.dk/LagerProjekt/css/storestyle.css" type="text/css" rel="stylesheet" />
+        <link href="css/storestyle.css" type="text/css" rel="stylesheet" />
         <div id="shopping-cart">
             <div class="txt-heading">Shopping Cart</div>
 
-            <a id="btnEmpty" href="store.php?action=empty">Empty Cart</a>
+            <a id="btnEmpty" href="./index.php?page=store?action=empty">Empty Cart</a>
             <?php
             if (isset($_SESSION["cart_item"])) {
                 $total_quantity = 0;
@@ -78,7 +78,7 @@ if (!empty($_GET["action"])) {
                                 <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
                                 <td  style="text-align:right;"><?php echo $item["price"] . "kr"; ?></td>
                                 <td  style="text-align:right;"><?php echo number_format($item_price, 2) . "kr"; ?></td>
-                                <td style="text-align:center;"><a href="store.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="../images/icon-delete.png" alt="Remove Item" /></a></td>
+                                <td style="text-align:center;"><a href="./index.php?page=store?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="../images/icon-delete.png" alt="Remove Item" /></a></td>
                             </tr>
                             <?php
                             $total_quantity += $item["quantity"];
@@ -111,7 +111,7 @@ if (!empty($_GET["action"])) {
                 foreach ($product_array as $key => $value) {
                     ?>
                     <div class="product-item">
-                        <form method="post" action="store.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+                        <form method="post" action="./index.php?page=store?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
                             <div class="product-image"><img src="../images/<?php echo $product_array[$key]["image"]; ?>"></div>
                             <div class="product-tile-footer">
                                 <div class="product-title"><?php echo $product_array[$key]["name"]; ?></div>
@@ -130,4 +130,4 @@ if (!empty($_GET["action"])) {
             <div style="margin: 1px; text-aling: center">
         <p>This is underneath</p>
     </div>
-  <?php require_once "http://www.emko01.skp-dp.sde.dk/LagerProjekt/includes/footer.php";
+  <?php require_once "includes/footer.php";

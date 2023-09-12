@@ -7,20 +7,20 @@ spl_autoload_register(function ($classname) {
  $mysqli = UniversalConnect::doConnect();
 
 ini_set('display_errors', 1);
-$page = strtolower(isset($_GET['page'])) ? $_GET['page'] : 'home';
+$page = strtolower(isset($_GET['page'])) ? $_GET['page'] : 'start';
 if (isset($_POST['page'])) {
-    $page = strtolower((isset($_POST['page'])) ? $_POST['page'] : 'home');
+    $page = strtolower((isset($_POST['page'])) ? $_POST['page'] : 'start');
 }
 
 $page = 'pages/' . $page . '.php';
 
-$home_active = '';
+$start_active = '';
 $store_active = '';
 $contact_active = '';
 $about_active = "";
 switch ($page) {
-    case 'pages/home.php':
-        $home_active = " style=\"color: #fff;background:#1e282c;\"";
+    case 'pages/start.php':
+        $start_active = " style=\"color: #fff;background:#1e282c;\"";
 
         break;
     case 'pages/store.php':
@@ -38,6 +38,6 @@ switch ($page) {
         break;
 
     default:
-        $home_active = " style=\"color: #fff;background:#1e282c;\"";
+        $start_active = " style=\"color: #fff;background:#1e282c;\"";
         break;
 }

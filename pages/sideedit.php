@@ -1,4 +1,4 @@
-<?php
+    <?php
 $file = $_POST['var']; // file to edit
 $html = file_get_contents($file); //read the file contents
 $html = htmlentities($html, ENT_QUOTES);
