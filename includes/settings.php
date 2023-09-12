@@ -18,6 +18,7 @@ $start_active = '';
 $store_active = '';
 $contact_active = '';
 $about_active = "";
+$cart_active = "";
 switch ($page) {
     case 'pages/start.php':
         $start_active = " style=\"color: #fff;background:#1e282c;\"";
@@ -27,13 +28,14 @@ switch ($page) {
         $store_active = " style=\"color: #fff;background:#1e282c;\"";
 
         break;
-    case 'pages/cart.php':
+    
+        case 'pages/about.php':
         $contact_active = " style=\"color: #fff;background:#1e282c;\"";
 
         break;
     
-        case 'pages/about.php':
-        $contact_active = " style=\"color: #fff;background:#1e282c;\"";
+            case 'pages/cart.php':
+        $cart_active = " style=\"color: #fff;background:#1e282c;\"";
 
         break;
 
