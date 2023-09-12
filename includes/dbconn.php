@@ -1,4 +1,5 @@
 <?php
+
 $servername = "localhost";
 $username = "emko01_skp-dp_sde_dk";
 $password = "pqk5235q";

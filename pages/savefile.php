@@ -1,4 +1,5 @@
 <?php
+
 $fileContent = file_get_contents($_POST['var']);
 echo $fileContent;
 $file_content = urldecode($_POST['file_content']);

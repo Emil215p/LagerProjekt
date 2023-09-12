@@ -40,7 +40,7 @@ if (!empty($_GET["action"])) {
                     if (empty($_SESSION["cart_item"]))
                         unset($_SESSION["cart_item"]);
                 }
-                }
+            }
             break;
         case "empty":
             unset($_SESSION["cart_item"]);
@@ -48,34 +48,34 @@ if (!empty($_GET["action"])) {
     }
 }
 ?>
-        <link href="css/storestyle.css" type="text/css" rel="stylesheet" />
+<link href="css/storestyle.css" type="text/css" rel="stylesheet" />
 
 <div style="display: table;">
-        <div id="product-grid">
-            <div class="txt-heading">Products</div>
-            <?php
-            $product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY id ASC");
-            if (!empty($product_array)) {
-                foreach ($product_array as $key => $value) {
-                    ?>
-                    <div class="product-item">
-                        <form method="post" action="index.php?page=store&action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-                            <div class="product-image"><img src="images/<?php echo $product_array[$key]["image"]; ?>"></div>
-                            <div class="product-tile-footer">
-                                <div class="product-title"><?php echo $product_array[$key]["name"]; ?></div>
-                                <div class="product-price"><?php echo $product_array[$key]["price"] . "kr"; ?></div>
-                                <div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
-                            </div>
-                        </form>
-                    </div>
-                    <?php
-                }
+    <div id="product-grid">
+        <div class="txt-heading">Products</div>
+        <?php
+        $product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY id ASC");
+        if (!empty($product_array)) {
+            foreach ($product_array as $key => $value) {
+                ?>
+                <div class="product-item">
+                    <form method="post" action="index.php?page=store&action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+                        <div class="product-image"><img src="images/<?php echo $product_array[$key]["image"]; ?>"></div>
+                        <div class="product-tile-footer">
+                            <div class="product-title"><?php echo $product_array[$key]["name"]; ?></div>
+                            <div class="product-price"><?php echo $product_array[$key]["price"] . "kr"; ?></div>
+                            <div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
+                        </div>
+                    </form>
+                </div>
+                <?php
             }
-            ?>
-        </div>
-        </div>  
-        <div id="spacer"><p>This text should not be visible.</p></div>
-            <div style="margin: 1px; text-aling: center">
-        <p>This is underneath</p>
+        }
+        ?>
     </div>
-  <?php require_once "includes/footer.php";
+</div>
+<div class="txt-heading"><br></div>
+<div class="txt-heading"><br></div>
+<div class="txt-heading"><br></div>
+<?php
+require_once "includes/footer.php";

@@ -29,8 +29,14 @@ switch ($page) {
 
         break;
     
-        case 'pages/about.php':
+            case 'pages/contact.php':
         $contact_active = " style=\"color: #fff;background:#1e282c;\"";
+
+        break;
+    
+    
+        case 'pages/about.php':
+        $about_active = " style=\"color: #fff;background:#1e282c;\"";
 
         break;
     

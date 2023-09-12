@@ -18,13 +18,13 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<tr><td>" . $row["TestID"] . "</td><td>" . $row["Testen"] . "</td><td>" . $row["Tester"] . "<tr><td>" . $row["Tost"] . "</td><td>";
     }
-    echo "</table>";    
+    echo "</table>";
 } else {
     echo "0 results";
 }
 $conn->close();
 ?>
-        
+
                     <a href="../index.php"><h1>Return to start...</h1></a>
 </body>
 </html>

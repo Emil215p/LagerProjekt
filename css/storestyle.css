@@ -1,35 +1,35 @@
 #shopping-cart {
-	margin: 40px;
+    margin: 40px;
 }
 
 #product-grid {
-	margin: 40px;
+    margin: 40px;
 }
 
 #shopping-cart table {
-	width: 100%;
-	background-color: #F0F0F0;
+    width: 100%;
+    background-color: #F0F0F0;
 }
 
 #shopping-cart table td {
-	background-color: #FFFFFF;
+    background-color: #FFFFFF;
 }
 
 .txt-heading {
-	color: #211a1a;
-	border-bottom: 1px solid #E0E0E0;
-	overflow: auto;
+    color: #211a1a;
+    border-bottom: 1px solid #E0E0E0;
+    overflow: auto;
 }
 
 #btnEmpty {
-	background-color: #ffffff;
-	border: #d00000 1px solid;
-	padding: 5px 10px;
-	color: #d00000;
-	float: right;
-	text-decoration: none;
-	border-radius: 3px;
-	margin: 10px 0px;
+    background-color: #ffffff;
+    border: #d00000 1px solid;
+    padding: 5px 10px;
+    color: #d00000;
+    float: right;
+    text-decoration: none;
+    border-radius: 3px;
+    margin: 10px 0px;
 }
 
 .btnAddAction {
@@ -45,50 +45,50 @@
 }
 
 #product-grid .txt-heading {
-	margin-bottom: 18px;
+    margin-bottom: 18px;
 }
 
 .product-item {
-	float: left;
-	background: #ffffff;
-	margin: 30px 30px 0px 0px;
-	border: #E0E0E0 1px solid;
+    float: left;
+    background: #ffffff;
+    margin: 30px 30px 0px 0px;
+    border: #E0E0E0 1px solid;
 }
 
 .product-image {
-	height: 155px;
-	width: 250px;
-	background-color: #FFF;
+    height: 155px;
+    width: 250px;
+    background-color: #FFF;
 }
 
 .clear-float {
-	clear: both;
+    clear: both;
 }
 
 .demo-input-box {
-	border-radius: 2px;
-	border: #CCC 1px solid;
-	padding: 2px 1px;
+    border-radius: 2px;
+    border: #CCC 1px solid;
+    padding: 2px 1px;
 }
 
 .tbl-cart {
-	font-size: 0.9em;
+    font-size: 0.9em;
 }
 
 .tbl-cart th {
-	font-weight: normal;
+    font-weight: normal;
 }
 
 .product-title {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .product-price {
-	float:left;
+    float:left;
 }
 
 .cart-action {
-	float: right;
+    float: right;
 }
 
 .product-quantity {
@@ -103,7 +103,7 @@
 }
 
 .cart-item-image {
-	width: 30px;
+    width: 30px;
     height: 30px;
     border-radius: 50%;
     border: #E0E0E0 1px solid;
@@ -112,13 +112,13 @@
     margin-right: 15px;
 }
 .no-records {
-	text-align: center;
-	clear: both;
-	margin: 38px 0px;
+    text-align: center;
+    clear: both;
+    margin: 38px 0px;
 }
 
 #spacer {
-        color: Beige;
-	padding: 20px;
-        width: 100%;
+    color: Beige;
+    padding: 20px;
+    width: 100%;
 }
