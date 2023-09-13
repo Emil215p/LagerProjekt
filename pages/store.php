@@ -1,19 +1,30 @@
-<h1>Items</h1>
-<p>Buy what you want.</p>
 <?php
-require_once("includes/dbcontroller.php");
-$db_handle = new DBController();
+$mysqli = UniversalConnect::doConnect();
+
 if (!empty($_GET["action"])) {
     switch ($_GET["action"]) {
         case "add":
             if (!empty($_POST["quantity"])) {
-                $productByCode = $db_handle->runQuery("SELECT * FROM products WHERE code='" . $_GET["code"] . "'");
-                $itemArray = array($productByCode[0]["code"] => array('name' => $productByCode[0]["name"], 'code' => $productByCode[0]["code"], 'quantity' => $_POST["quantity"], 'price' => $productByCode[0]["price"], 'image' => $productByCode[0]["image"]));
-
+                $quantity = $_POST["quantity"];
+                $result = $mysqli->query("SELECT `id`, `manufacturer_id`, `name`, `price`, `quantity`, `image`, `code` FROM `products` "
+                        . "WHERE code='" . $_GET["code"] . "'");
+                
+                $code = '';
+                $name = '';
+                $price = '';
+                $image = '';
+                if ($result->num_rows > 0) {
+                    $item = $result->fetch_object();
+                    $code = $item->code;
+                    $name = $item->name;
+                    $price = $item->price;
+                    $image = $item->image;
+                }
+               $itemArray = array($code => array('name' => $name, 'code' => $code, 'quantity' => $quantity, 'price' => $price, 'image' => $image));
                 if (!empty($_SESSION["cart_item"])) {
-                    if (in_array($productByCode[0]["code"], array_keys($_SESSION["cart_item"]))) {
+                    if (!empty($code) && ($code == array_keys($_SESSION["cart_item"]))) {
                         foreach ($_SESSION["cart_item"] as $k => $v) {
-                            if ($productByCode[0]["code"] == $k) {
+                            if ($code == $k) {
                                 if (empty($_SESSION["cart_item"][$k]["quantity"])) {
                                     $_SESSION["cart_item"][$k]["quantity"] = 0;
                                 }
@@ -43,30 +54,35 @@ if (!empty($_GET["action"])) {
             break;
     }
 }
+
+$result = $mysqli->query("SELECT `id`, `manufacturer_id`, `name`, `price`, `quantity`, `image`, `code` FROM `products` ORDER BY id ASC");
+$output = "";
+if ($result->num_rows > 0) {
+    while ($product = $result->fetch_object()) {
+        $name = $product->name;
+        $code = $product->code;
+        $image = $product->image;
+        $price = $product->price;
+        $output .= "<div class=\"product-item\">";
+        $output .= "<form method=\"post\" action=\"index.php?page=store&action=add&code=$code\">";
+        $output .= "<div class=\"product-image\"><img src=\"images/$image\"></div>";
+        $output .= "<div class=\"product-tile-footer\">";
+        $output .= "<div class=\"product-title\">$name</div>";
+        $output .= "<div class=\"product-price\">$price kr</div>";
+        $output .= "<div class=\"cart-action\"><input type=\"text\" class=\"product-quantity\" name=\"quantity\" value=\"1\"";
+        $output .= "size=\"2\" /><input type=\"submit\" value=\"Add to Cart\" class=\"btnAddAction\" /></div> </div> </form> </div>";
+    }
+    $result->free();
+}
 ?>
-<link href="css/storestyle.css" type="text/css" rel="stylesheet" />
+<h1>Items</h1>
+<p>Buy what you want.</p>
 
 <div style="display: table;">
     <div id="product-grid">
         <div class="txt-heading">Products</div>
         <?php
-        $product_array = $db_handle->runQuery("SELECT * FROM products ORDER BY id ASC");
-        if (!empty($product_array)) {
-            foreach ($product_array as $key => $value) {
-                ?>
-                <div class="product-item">
-                    <form method="post" action="index.php?page=store&action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-                        <div class="product-image"><img src="images/<?php echo $product_array[$key]["image"]; ?>"></div>
-                        <div class="product-tile-footer">
-                            <div class="product-title"><?php echo $product_array[$key]["name"]; ?></div>
-                            <div class="product-price"><?php echo $product_array[$key]["price"] . "kr"; ?></div>
-                            <div class="cart-action"><input type="text" class="product-quantity" name="quantity" value="1" size="2" /><input type="submit" value="Add to Cart" class="btnAddAction" /></div>
-                        </div>
-                    </form>
-                </div>
-                <?php
-            }
-        }
+        echo $output;
         ?>
     </div>
 </div>
