@@ -1,7 +1,3 @@
-<?php
-require_once "includes/header.php";
-require_once "includes/navbar.php"
-?>
 <h1>Items</h1>
 <p>Buy what you want.</p>
 <?php
@@ -77,5 +73,3 @@ if (!empty($_GET["action"])) {
 <div class="txt-heading"><br></div>
 <div class="txt-heading"><br></div>
 <div class="txt-heading"><br></div>
-<?php
-require_once "includes/footer.php";
