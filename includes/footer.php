@@ -1,5 +1,5 @@
 <footer><div class="footer">
-    <p>Emil Juel Korsholms store website, 2023, Version 0.7c.</p>
+    <p>Emil215ps store website, 2023, Version 0.7d.</p>
 </div></footer>
 </body>
 </html>
