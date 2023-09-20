@@ -1,14 +1,19 @@
 <?php
 $mysqli = UniversalConnect::doConnect();
+$action = isset($_GET["action"]) ? $_GET["action"] : '';
+$posted_quantity = isset($_POST["quantity"]) ? $_POST["quantity"] : '';
+$get_code = isset($_GET["code"]) ? $_GET["code"] : '';
+if (!empty($get_code)) {
+    $get_code = $mysqli->real_escape_string($get_code);
+}
 
-if (!empty($_GET["action"])) {
-    switch ($_GET["action"]) {
+if (!empty($action)) {
+    switch ($action) {
         case "add":
-            if (!empty($_POST["quantity"])) {
-                $quantity = $_POST["quantity"];
+            if (!empty($posted_quantity)) {
                 $result = $mysqli->query("SELECT `id`, `manufacturer_id`, `name`, `price`, `quantity`, `image`, `code` FROM `products` "
-                        . "WHERE code='" . $_GET["code"] . "'");
-                
+                        . "WHERE code='" . $get_code . "'");
+
                 $code = '';
                 $name = '';
                 $price = '';
@@ -20,7 +25,7 @@ if (!empty($_GET["action"])) {
                     $price = $item->price;
                     $image = $item->image;
                 }
-               $itemArray = array($code => array('name' => $name, 'code' => $code, 'quantity' => $quantity, 'price' => $price, 'image' => $image));
+                $itemArray = array($code => array('name' => $name, 'code' => $code, 'quantity' => $posted_quantity, 'price' => $price, 'image' => $image));
                 if (!empty($_SESSION["cart_item"])) {
                     if (!empty($code) && ($code == array_keys($_SESSION["cart_item"]))) {
                         foreach ($_SESSION["cart_item"] as $k => $v) {
@@ -28,7 +33,7 @@ if (!empty($_GET["action"])) {
                                 if (empty($_SESSION["cart_item"][$k]["quantity"])) {
                                     $_SESSION["cart_item"][$k]["quantity"] = 0;
                                 }
-                                $_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+                                $_SESSION["cart_item"][$k]["quantity"] += $posted_quantity;
                             }
                         }
                     } else {
@@ -42,10 +47,12 @@ if (!empty($_GET["action"])) {
         case "remove":
             if (!empty($_SESSION["cart_item"])) {
                 foreach ($_SESSION["cart_item"] as $k => $v) {
-                    if ($_GET["code"] == $k)
+                    if ($get_code == $k) {
                         unset($_SESSION["cart_item"][$k]);
-                    if (empty($_SESSION["cart_item"]))
+                    }
+                    if (empty($_SESSION["cart_item"])) {
                         unset($_SESSION["cart_item"]);
+                    }
                 }
             }
             break;
@@ -86,6 +93,3 @@ if ($result->num_rows > 0) {
         ?>
     </div>
 </div>
-<div class="txt-heading"><br></div>
-<div class="txt-heading"><br></div>
-<div class="txt-heading"><br></div>

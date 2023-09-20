@@ -7,6 +7,10 @@ body {
 .topnav {
     background-color: #FFD550;
     overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
 
 /* Style the links inside the navigation bar */
@@ -43,4 +47,10 @@ body {
     color: white;
     text-align: center;
     text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+    margin-top: 100px;
+}
+
+.content {
+    margin-top: 50px;
+    margin-bottom: 75px;
 }

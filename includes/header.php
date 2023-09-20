@@ -15,6 +15,9 @@ $mysqli = UniversalConnect::doConnect();
             if ($page == 'pages/store.php') {
                 echo '<link href="css/storestyle.css" type="text/css" rel="stylesheet" />';
             }
+            if ($page == 'pages/cart.php') {
+                echo '<link href="css/storestyle.css" type="text/css" rel="stylesheet" />';
+            }
         ?>
     </head>
     <body>
