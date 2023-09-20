@@ -9,6 +9,7 @@ $mysqli = UniversalConnect::doConnect();
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
         <title>Emils good store</title>
         <link rel="stylesheet" href="css/styleforgeneral.css" type="text/css"> 
         <?php 
