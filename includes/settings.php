@@ -1,4 +1,5 @@
 <?php
+session_start();
 spl_autoload_register(function ($classname) {
     require_once 'classes/' . $classname . '.php';
 });
@@ -9,28 +10,3 @@ if (isset($_POST['page'])) {
     $page = strtolower((isset($_POST['page'])) ? $_POST['page'] : 'start');
 }
 $page = 'pages/' . $page . '.php';
-$start_active = '';
-$store_active = '';
-$contact_active = '';
-$about_active = "";
-$cart_active = "";
-switch ($page) {
-    case 'pages/start.php':
-        $start_active = " style=\"color: #fff;background:#1e282c;\"";
-        break;
-    case 'pages/store.php':
-        $store_active = " style=\"color: #fff;background:#1e282c;\"";
-        break;
-    case 'pages/contact.php':
-        $contact_active = " style=\"color: #fff;background:#1e282c;\"";
-        break;
-    case 'pages/about.php':
-        $about_active = " style=\"color: #fff;background:#1e282c;\"";
-        break;
-    case 'pages/cart.php':
-        $cart_active = " style=\"color: #fff;background:#1e282c;\"";
-        break;
-    default:
-        $start_active = " style=\"color: #fff;background:#1e282c;\"";
-        break;
-}
