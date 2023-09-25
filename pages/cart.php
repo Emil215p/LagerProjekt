@@ -37,7 +37,9 @@ if (isset($_SESSION["cart_item"])) {
 
                 <tr>
                     <td colspan="2" align="right">Total:</td>
-                    <td align="right"><?php echo $total_quantity; ?></td>
+                    <td align="right"><?php
+                    $_SESSION["cart_item"] = $total_quantity;
+                    echo $total_quantity; ?></td>
                     <td align="right" colspan="2"><strong><?php echo number_format($total_price, 2) . "kr"; ?></strong></td>
                     <td></td>
                 </tr>

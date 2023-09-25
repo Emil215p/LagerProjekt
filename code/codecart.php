@@ -41,7 +41,7 @@ if (!empty($action)) {
                                 if (empty($_SESSION["cart_item"][$k]["quantity"])) {
                                     $_SESSION["cart_item"][$k]["quantity"] = 0;
                                 }
-                                $_SESSION["cart_item"][$k]["quantity"] += $posted_quantity;
+                                $_SESSION["cart_item"][$k]["quantity"] = $posted_quantity;
                             }
                         }
                     } else {
