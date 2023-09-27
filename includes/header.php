@@ -15,8 +15,8 @@
         $start_active = '';
         $store_active = '';
         $contact_active = '';
-        $about_active = "";
-        $cart_active = "";
+        $about_active = '';
+        $cart_active = '';
         switch ($page) {
             case 'pages/start.php':
                 $start_active = " style=\"color: #fff;background:#1e282c;\"";

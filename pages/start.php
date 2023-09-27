@@ -22,7 +22,7 @@
     <img src="images/2411.jpg" width="312" height="375">
     <div class="text">MenQ 2411</div>
   </div>
-
+l
   <!-- Next and previous buttons -->
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -56,7 +56,7 @@ function showSlides(n) {
   let dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
+  for (i = 0; i < slides.length; i++)   {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {

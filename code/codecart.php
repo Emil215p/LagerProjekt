@@ -22,26 +22,26 @@ if (!empty($action)) {
                 $result = $mysqli->query("SELECT `id`, `manufacturer_id`, `name`, `price`, `quantity`, `image`, `code` FROM `products` "
                         . "WHERE code='" . $get_code . "'");
 
-                $code = '';
+                //$code = '';
                 $name = '';
                 $price = '';
                 $image = '';
                 if ($result->num_rows > 0) {
                     $item = $result->fetch_object();
-                    $code = $item->code;
+                    //$code = $item->code;
                     $name = $item->name;
                     $price = $item->price;
                     $image = $item->image;
                 }
-                $itemArray = array($code => array('name' => $name, 'code' => $code, 'quantity' => $posted_quantity, 'price' => $price, 'image' => $image));
+                $itemArray = array($get_code => array('name' => $name, 'code' => $get_code, 'quantity' => $posted_quantity, 'price' => $price, 'image' => $image));
                 if (!empty($_SESSION["cart_item"])) {
-                    if (!empty($code) && ($code == array_keys($_SESSION["cart_item"]))) {
+                    if (!empty($get_code) && ($get_code == array_keys($_SESSION["cart_item"]))) {
                         foreach ($_SESSION["cart_item"] as $k => $v) {
-                            if ($code == $k) {
+                            if ($get_code == $k) {
                                 if (empty($_SESSION["cart_item"][$k]["quantity"])) {
                                     $_SESSION["cart_item"][$k]["quantity"] = 0;
                                 }
-                                $_SESSION["cart_item"][$k]["quantity"] = $posted_quantity;
+                                $_SESSION["cart_item"][$k]["quantity"] += $posted_quantity;
                             }
                         }
                     } else {

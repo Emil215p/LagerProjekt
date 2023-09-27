@@ -17,7 +17,7 @@ if (isset($_SESSION["cart_item"])) {
                 <th style="text-align:center;" width="5%">Remove</th>
             </tr>	
 <?php
-if (isset($_SESSION["cart_item"])) {
+if (isset($_SESSION["cart_item"])) {    
     foreach ($_SESSION["cart_item"] as $item) {
         $item_price = $item["quantity"] * $item["price"];
         ?>
@@ -43,8 +43,9 @@ if (isset($_SESSION["cart_item"])) {
                     <td align="right" colspan="2"><strong><?php echo number_format($total_price, 2) . "kr"; ?></strong></td>
                     <td></td>
                 </tr>
+                <button name="button" onclick="location.href='index.php?page=checkout'" type="button">Click Here</button> 
             </tbody>
-        </table>		
+        </table>
     <?php
 } else {
     ?>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+//error_reporting(0);
 spl_autoload_register(function ($classname) {
     require_once 'classes/' . $classname . '.php';
 });
