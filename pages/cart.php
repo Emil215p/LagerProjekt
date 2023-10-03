@@ -17,6 +17,7 @@ if (isset($_SESSION["cart_item"])) {
                 <th style="text-align:center;" width="5%">Remove</th>
             </tr>	
 <?php
+var_dump($_SESSION);
 if (isset($_SESSION["cart_item"])) {    
     foreach ($_SESSION["cart_item"] as $item) {
         $item_price = $item["quantity"] * $item["price"];
@@ -38,7 +39,7 @@ if (isset($_SESSION["cart_item"])) {
                 <tr>
                     <td colspan="2" align="right">Total:</td>
                     <td align="right"><?php
-                    $_SESSION["cart_item"] = $total_quantity;
+                    //$_SESSION["cart_item"] = $total_quantity; ((THIS WAS THE IDIOT))
                     echo $total_quantity; ?></td>
                     <td align="right" colspan="2"><strong><?php echo number_format($total_price, 2) . "kr"; ?></strong></td>
                     <td></td>
