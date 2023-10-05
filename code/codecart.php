@@ -70,4 +70,4 @@ if (!empty($action)) {
             break;
     }
 }
-header("location: ../index.php?page=$page");
+header("location: ../index.php?page=$page");    

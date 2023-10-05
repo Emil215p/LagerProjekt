@@ -17,7 +17,6 @@ if (isset($_SESSION["cart_item"])) {
                 <th style="text-align:center;" width="5%">Remove</th>
             </tr>	
 <?php
-var_dump($_SESSION);
 if (isset($_SESSION["cart_item"])) {    
     foreach ($_SESSION["cart_item"] as $item) {
         $item_price = $item["quantity"] * $item["price"];

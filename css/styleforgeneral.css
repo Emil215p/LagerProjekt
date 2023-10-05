@@ -51,6 +51,25 @@ body {
 }
 
 .content {
-    margin-top: 50px;
+    margin-top: 50px;   
     margin-bottom: 75px;
+}
+
+#checkoutform {
+  padding: 10px;
+  border-radius: 10px;
+  width: 40%;
+  display: grid;
+  left: 50%;
+  top: 25%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+#lasagna {
+    margin-bottom: 15px;
+}
+
+.input-width {
+    width: 98.7%;
 }

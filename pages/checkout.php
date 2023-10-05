@@ -1,30 +1,31 @@
-<?php echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>'; ?>
-<form action="code/insert.php" method="post">
-    <div class="form-group">
-        <label>name</label>
-        <input type="text" name="name" class="form-control">
+<?php
+ 
+echo '<pre>'; var_dump($_SESSION["cart_item"]); echo '</pre>';
+?>
+<form id="checkoutform" action="code/insert.php" method="post">
+    <div id="lasagna">
+    <label>Name:</label><br>
+    <input class='input-width' type="text" name="name"><br>
     </div>
-    <div class="form-group">
-        <label>address</label>
-        <input type="text" name="address" class="form-control">
+    <div id="lasagna">
+    <label>Address:</label><br>
+    <input class='input-width' type="text" name="address"><br>
     </div>
-    <div class="form-group">
-        <label>zip</label>
-        <input type="text" name="zip" class="form-control">
+    <div id="lasagna">
+    <label>Zip:</label><br>
+    <input class='input-width' type="text" name="zip"><br>
     </div>
-    <div class="form-group">
-        <label>city</label>
-        <input type="text" name="city" class="form-control">
+    <div id="lasagna">
+    <label>City:</label><br>
+    <input class='input-width' type="text" name="city"><br>
     </div>
-    <div class="form-group">
-        <label>phone</label>
-        <input type="text" name="phone" class="form-control">
+    <div id="lasagna">
+    <label>Phone:</label><br>
+    <input class='input-width' type="text" name="phone"><br>
     </div>
-    <div class="form-group">
-        <label>email</label>
-        <input type="text" name="email" class="form-control">
+    <div id="lasagna">
+    <label>Email:</label><br>
+    <input class='input-width' type="text" name="email"><br>
     </div>
     <input type="submit" class="btn btn-primary" name="submit" value="Indsend">
 </form>
