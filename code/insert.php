@@ -21,22 +21,24 @@ if (isset($_POST['submit'])) {
     $new_customer_id = $mysqli->insert_id;
     $sql = "INSERT INTO orders (customer_id, date) VALUES ('$new_customer_id', '$date')";
     $mysqli->query($sql);
-    $mysqli->close();
 
     //orderslines
-    $new_order_id = $mysli->insert_id;
+    $new_order_id = $mysqli->insert_id;
 
     // creates an array with all the key names
     $arr_ids = array_keys($_SESSION["cart_item"]);
-
-    foreach ($arr_ids as $id) {
+    foreach ($arr_ids as $code) {
         // get's all the content of the id
-        $cart_content = $_SESSION["cart_item"][$id];
+        $cart_content = $_SESSION["cart_item"][$code];
         // how to select feilds
-        $product_name = $content["name"];
-        $product_quantity = $content["quantity"];
-        $product_price = $content["price"];
-        $product_image = $content["image"];
+//        $product_name = $content["name"];
+        $product_quantity = $cart_content["quantity"];
+        $product_id = $cart_content['id'];
+        $sql = "INSERT INTO orderslines (product_id, order_id, amount) VALUES ('$product_id','$new_order_id','$product_quantity')";
+        
+        $mysqli->query($sql);
     }
+    $mysqli->close();
 }
+unset($_SESSION["cart_item"]);
 header("location: ../index.php?page=store");
