@@ -73,3 +73,18 @@ body {
 .input-width {
     width: 98.7%;
 }
+
+#checkoutformlogin {
+  padding: 10px;
+  border-radius: 10px;
+  width: 40%;
+  display: grid;
+  left: 50%;
+  top: 60%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+#lasagnalogin {
+    margin-bottom: 15px;
+}

@@ -2,15 +2,15 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
         <title>Emils good store</title>
-        <link rel="stylesheet" href="css/styleforgeneral.css" type="text/css"> 
+        <link rel="stylesheet" href="assets/css/styleforgeneral.css" type="text/css"> 
         <?php
         if ($page == 'pages/store.php') {
-            echo '<link href="css/storestyle.css" type="text/css" rel="stylesheet" />';
+            echo '<link href="assets/css/storestyle.css" type="text/css" rel="stylesheet" />';
         }
         if ($page == 'pages/cart.php') {
-            echo '<link href="css/storestyle.css" type="text/css" rel="stylesheet" />';
+            echo '<link href="assets/css/storestyle.css" type="text/css" rel="stylesheet" />';
         }
         $start_active = '';
         $store_active = '';

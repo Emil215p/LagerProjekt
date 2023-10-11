@@ -10,7 +10,7 @@ if ($result->num_rows > 0) {
         $output .= "<div class=\"product-item\">";
         $output .= "<form method=\"post\" action=\"code/codecart.php?action=add\">";
         $output .= "<input type='hidden' name='code' value='$code'>";
-        $output .= "<div class=\"product-image\"><img src=\"images/$image\"></div>";
+        $output .= "<div class=\"product-image\"><img src=\"assets/images/$image\"></div>";
         $output .= "<div class=\"product-tile-footer\">";
         $output .= "<div class=\"product-title\">$name</div>";
         $output .= "<div class=\"product-price\">$price kr</div>";
