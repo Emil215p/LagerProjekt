@@ -22,12 +22,12 @@ if (isset($_SESSION["cart_item"])) {
         $item_price = $item["quantity"] * $item["price"];
         ?>
                     <tr>
-                        <td><img src="images/<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
+                        <td><img src="assets/images/<?php echo $item["image"]; ?>" class="cart-item-image" /><?php echo $item["name"]; ?></td>
                         <td><?php echo $item["code"]; ?></td>
                         <td style="text-align:right;"><?php echo $item["quantity"]; ?></td>
                         <td  style="text-align:right;"><?php echo $item["price"] . "kr"; ?></td>
                         <td  style="text-align:right;"><?php echo number_format($item_price, 2) . "kr"; ?></td>
-                        <td style="text-align:center;"><a href="code/codecart.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="images/icon-delete.png" alt="Remove Item" /></a></td>
+                        <td style="text-align:center;"><a href="code/codecart.php?action=remove&code=<?php echo $item["code"]; ?>" class="btnRemoveAction"><img src="assets/images/icon-delete.png" alt="Remove Item" /></a></td>
                     </tr>
         <?php
         $total_quantity += $item["quantity"];
