@@ -17,6 +17,9 @@
         $contact_active = '';
         $about_active = '';
         $cart_active = '';
+        $loginornew_active = '';
+        $loginname_active = '';
+        $logout_active = '';
         switch ($page) {
             case 'pages/start.php':
                 $start_active = " style=\"color: #fff;background:#1e282c;\"";
@@ -32,6 +35,15 @@
                 break;
             case 'pages/cart.php':
                 $cart_active = " style=\"color: #fff;background:#1e282c;\"";
+                break;
+            case 'pages/loginornew.php':
+                $loginornew_active = " style=\"color: #fff;background:#1e282c;\"";
+                break;
+            case 'yea':
+                $loginname_active = " style=\"color: #fff;background:#1e282c;\"";
+                break;
+            case 'code/logout.php':
+                $logout_active = " style=\"color: #fff;background:#1e282c;\"";
                 break;
             default:
                 $start_active = " style=\"color: #fff;background:#1e282c;\"";

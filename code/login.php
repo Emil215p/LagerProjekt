@@ -5,21 +5,34 @@ spl_autoload_register(function ($classname) {
     require_once '../classes/' . $classname . '.php';
 });
 $mysqli = UniversalConnect::doConnect();
-            $msg = '';
             $csemail = $_POST['email'];
-            $csname = $_POST['name'];
+            $cspassword = $_POST['password'];
             $cslogin = $_POST['login'];
-            if (isset($cslogin) && !empty($csname) 
+            $csname = $_POST['name'];
+            $sqlpassword = "SELECT password FROM customers WHERE password LIKE '%".$cspassword."%'";
+            $sqlemail = "SELECT email FROM customers WHERE email LIKE '%".$csemail."%'";
+            $mysqli->query($sqlpassword);
+            $mysqli->query($sqlemail);
+            
+            $resultpassword = $mysqli->query($sqlpassword);
+            $rowpassword = mysqli_fetch_row($resultpassword);
+            $passwordquery = $rowpassword[0];
+            
+            $resultemail = $mysqli->query($sqlemail);
+            $rowemail = mysqli_fetch_row($resultemail);
+            $emailquery = $rowemail[0];
+            if (isset($cslogin) && !empty($cspassword) 
                && !empty($csemail)) {
-               if ($csname ==  "SELECT name FROM customers WHERE name LIKE '%".$csname."%'" && 
-                  $csemail == "SELECT email FROM customers WHERE email LIKE '%".$csemail."%'") {
+               if ($cspassword ==  $passwordquery && 
+                  $csemail == $emailquery) {
                   $_SESSION['valid'] = true;
                   $_SESSION['timeout'] = time();
                   $_SESSION['name'] = $csname;
                   
-                  echo 'You have entered valid name and email';
+                  echo 'You have entered valid password and email';
+                  header("location: ../index.php?page=start");
                }else {
-                  $msg = 'Wrong name or email';
+                  echo 'Wrong password or email';
                }
             }
-            header("location: ../index.php?page=start");
+            //header("location: ../index.php?page=start");

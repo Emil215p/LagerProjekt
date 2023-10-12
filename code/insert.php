@@ -13,8 +13,9 @@ if (isset($_POST['submit'])) {
     $city = $_POST['city'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
+    $password = $_POST['password'];
     $date = date("Y-m-d");
-    $sql = "INSERT INTO customers (name,address,zip,city,phone,email) VALUES ('$name','$address','$zip','$city','$phone','$email')";
+    $sql = "INSERT INTO customers (name,address,zip,city,phone,email, password) VALUES ('$name','$address','$zip','$city','$phone','$email','$password')";
     $mysqli->query($sql);
 
     //orders
