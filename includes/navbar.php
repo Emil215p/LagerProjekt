@@ -32,6 +32,7 @@ $navbar = <<<OUT
  <a $contact_active class="navbar-brand" href="index.php?page=contact">Contact</a>
  <a $about_active class="navbar-brand" href="index.php?page=about">About</a>
  <a id="right" $cart_active class="navbar-brand" href="index.php?page=cart">($quantity) Cart</a>
+ <a id="right" $accountpage_active class="navbar-brand" href="index.php?page=account">Account</a>
  <a id="right" $logout_active class="navbar-brand" href="code/logout.php">Logout</a>
  <a $loginname_active id="right" class="navbar-brand">You are currently logged in as ($sessionname)</a>
  </div>

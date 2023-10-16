@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $date = date("Y-m-d");
-    $sql = "INSERT INTO customers (name,address,zip,city,phone,email, password) VALUES ('$name','$address','$zip','$city','$phone','$email','$password')";
+    $sql = "INSERT INTO customers (name,address,zip,city,phone,email,password) VALUES ('$name','$address','$zip','$city','$phone','$email','$password')";
     $mysqli->query($sql);
 
     //orders
@@ -25,7 +25,6 @@ if (isset($_POST['submit'])) {
 
     //orderslines
     $new_order_id = $mysqli->insert_id;
-
     // creates an array with all the key names
     $arr_ids = array_keys($_SESSION["cart_item"]);
     foreach ($arr_ids as $code) {

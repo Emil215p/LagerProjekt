@@ -20,6 +20,7 @@
         $loginornew_active = '';
         $loginname_active = '';
         $logout_active = '';
+        $accountpage_active = '';
         switch ($page) {
             case 'pages/start.php':
                 $start_active = " style=\"color: #fff;background:#1e282c;\"";
@@ -44,6 +45,9 @@
                 break;
             case 'code/logout.php':
                 $logout_active = " style=\"color: #fff;background:#1e282c;\"";
+                break;
+            case 'page/account.php':
+                $accountpage_active = " style=\"color: #fff;background:#1e282c;\"";
                 break;
             default:
                 $start_active = " style=\"color: #fff;background:#1e282c;\"";

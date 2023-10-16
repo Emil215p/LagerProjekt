@@ -15,11 +15,11 @@ $mysqli = UniversalConnect::doConnect();
             $mysqli->query($sqlemail);
             
             $resultpassword = $mysqli->query($sqlpassword);
-            $rowpassword = mysqli_fetch_row($resultpassword);
+            $rowpassword = $resultpassword -> fetch_row();
             $passwordquery = $rowpassword[0];
             
             $resultemail = $mysqli->query($sqlemail);
-            $rowemail = mysqli_fetch_row($resultemail);
+            $rowemail = $resultemail -> fetch_row();
             $emailquery = $rowemail[0];
             if (isset($cslogin) && !empty($cspassword) 
                && !empty($csemail)) {

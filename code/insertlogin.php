@@ -15,9 +15,8 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $date = date("Y-m-d");
-    $sql = "INSERT INTO customers (name,address,zip,city,phone,email, password) VALUES ('$name','$address','$zip','$city','$phone','$email','$password')";
+    $sql = "INSERT INTO customers (name,address,zip,city,phone,email,password) VALUES ('$name','$address','$zip','$city','$phone','$email','$password')";
     $mysqli->query($sql);
     $mysqli->close();
 }
-unset($_SESSION["cart_item"]);
 header("location: ../index.php?page=start");
