@@ -25,23 +25,19 @@
     </div>
     <div id="inputform">
     <label>Password:</label><br>
-    <input class='input-width' type="text" name="password"><br>
+    <input class='input-width' type="password" name="password"><br>
     </div>
-    <input type="submit" class="btn btn-primary" name="submit" value="Buy">
+    <input type="submit" class="btn btn-primary" name="submit" value="Register">
 </form>
 
 <form id="checkoutformlogin" action="code/login.php" method="post">
     <div id="inputformlogin">
-    <label><h1>Login:</h1><br>Name:</label><br>
-    <input class='input-width' type="text" name="name"><br>
-    </div>
-    <div id="inputformlogin">
-    <label>Email:</label><br>
+    <label><h1>Login:</h1><br>Email:</label><br>
     <input class='input-width' type="text" name="email"><br>
     </div>
     <div id="inputformlogin">
     <label>Password:</label><br>
-    <input class='input-width' type="text" name="password"><br>
+    <input class='input-width' type="password" name="password"><br>
     </div>
-    <input type="submit" class="btn btn-primary" name="login" value="Buy">
+    <input type="submit" class="btn btn-primary" name="login" value="Login">
 </form>
