@@ -1,5 +1,6 @@
 <?php
 
+//ini_set('display_errors', 1);
 //echo password_hash('1234', PASSWORD_DEFAULT);
 session_start();
 spl_autoload_register(function ($classname) {
@@ -13,42 +14,26 @@ $x_password = $_POST['password'];
 $x_email = $mysqli->real_escape_string($x_email);
 $x_password = $mysqli->real_escape_string($x_password);
 
-echo $sql = "SELECT password FROM customers WHERE email = '$csemail'";
+$sql = "SELECT password, name FROM customers WHERE email = '$x_email'";
 $result = $mysqli->query($sql);
 
 $verify = false;
-
 if ($result->num_rows > 0) {
-    echo $result->num_rows;
-    $obj_password = $result->fetch_object();
-    $db_password = $obj_password->password;
-    $verify = password_verify($cspassword, $db_password);
+    $obj_user = $result->fetch_object();
+    $db_password = $obj_user->password;
+    $verify = password_verify($x_password, $db_password);
+    $name = $obj_user->name;
 } else {
     echo "No results in the DB.";
 }
 
 if ($verify) {
     echo 'Password Verified!';
+    $_SESSION['name'] = $name;
+    $_SESSION['valid'] = true;
+    $_SESSION['timeout'] = time();
+    header('location: ../index.php?page=start');
 } else {
     echo 'Incorrect Password!';
+    header('location: ../index.php?page=loginornew');
 }
-//
-//$sqlemail = "SELECT email FROM customers WHERE email LIKE '%" . $csemail . "%'";
-//$mysqli->query($sqlemail);
-//
-//$resultemail = $mysqli->query($sqlemail);
-//$rowemail = $resultemail->fetch_row();
-//$emailquery = $rowemail[0];
-//if (isset($cslogin) && !empty($cspassword) && !empty($x_email)) {
-//    if ($cspassword == $passwordquery &&
-//            $verify) {
-//        $_SESSION['valid'] = true;
-//        $_SESSION['timeout'] = time();
-//        $_SESSION['name'] = $csname;
-//
-//        echo 'You have entered valid password and email';
-//        header("location: ../index.php?page=start");
-//    } else {
-//        echo 'Wrong password or email';
-//    }
-//}
