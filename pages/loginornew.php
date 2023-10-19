@@ -5,7 +5,7 @@
     </div>
     <div id="inputform">
     <label>Address:</label><br>
-    <input class='input-width' type="text" name="address" required><br>
+    <input class='input-width' type="text" name="address" pattern="[a-zA-ZæøåÆØÅ0-9]" required><br>
     </div>
     <div id="inputform">
     <label>Zip:</label><br>
@@ -25,7 +25,7 @@
     </div>
     <div id="inputform">
     <label>Password:</label><br>
-    <input class='input-width' type="password" name="password" required><br>
+    <input class='input-width' type="password" name="password" pattern="{8,}" required><br>
     </div>
     <input type="submit" class="btn btn-primary" name="submit" value="Register">
 </form>
