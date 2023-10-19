@@ -1,4 +1,4 @@
 <?php
 $sessionname = $_SESSION['name'];
-$sql = "SELECT name from customers WHERE  LIKE '%".$sessionname."%'";
-$mysqli->query($sql);
+
+echo "<h1>Welcome <em>" . $sessionname . "</em> Here you can see your orders:</h1>";

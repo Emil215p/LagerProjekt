@@ -9,19 +9,19 @@
     </div>
     <div id="inputform">
     <label>Zip:</label><br>
-    <input class='input-width' type="text" name="zip" required><br>
+    <input class='input-width' type="text" name="zip" pattern="[0-9]" required><br>
     </div>
     <div id="inputform">
     <label>City:</label><br>
-    <input class='input-width' type="text" name="city" required><br>
+    <input class='input-width' type="text" name="city" pattern="[a-zA-ZæøåÆØÅ]" required><br>
     </div>
     <div id="inputform">
     <label>Phone:</label><br>
-    <input class='input-width' type="text" name="phone" required><br>
+    <input class='input-width' type="text" name="phone" pattern="[0-9+]{1,11}" required><br>
     </div>
     <div id="inputform">
     <label>Email:</label><br>
-    <input class='input-width' type="text" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required><br>
+    <input class='input-width' type="text" name="email" pattern="[a-zA-ZæøåÆØÅ0-9._%+\-]+@[a-zA-ZæøåÆØÅ0-9.\-]+\.[a-zA-ZæøåÆØÅ]{2,}$" required><br>
     </div>
     <div id="inputform">
     <label>Password:</label><br>
@@ -33,7 +33,7 @@
 <form id="checkoutformlogin" action="code/login.php" method="post">
     <div id="inputformlogin">
     <label><h1>Login:</h1><br>Email:</label><br>
-    <input class='input-width' type="text" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required><br>
+    <input class='input-width' type="text" name="email" pattern="[a-zA-ZæøåÆØÅ0-9._%+\-]+@[a-zA-ZæøåÆØÅ0-9.\-]+\.[a-zA-ZæøåÆØÅ]{2,}$" required><br>
     </div>
     <div id="inputformlogin">
     <label>Password:</label><br>
