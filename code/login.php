@@ -14,7 +14,7 @@ $x_password = $_POST['password'];
 $x_email = $mysqli->real_escape_string($x_email);
 $x_password = $mysqli->real_escape_string($x_password);
 
-$sql = "SELECT password, name FROM customers WHERE email = '$x_email'";
+$sql = "SELECT id, password, name FROM customers WHERE email = '$x_email'";
 $result = $mysqli->query($sql);
 
 $verify = false;
@@ -23,12 +23,14 @@ if ($result->num_rows > 0) {
     $db_password = $obj_user->password;
     $verify = password_verify($x_password, $db_password);
     $name = $obj_user->name;
+    $id = $obj_user->id;
 } else {
     echo "No results in the DB.";
 }
 
 if ($verify) {
     echo 'Password Verified!';
+    $_SESSION['user_id'] = $id;
     $_SESSION['name'] = $name;
     $_SESSION['valid'] = true;
     $_SESSION['timeout'] = time();

@@ -30,7 +30,7 @@
     <input type="submit" class="btn btn-primary" name="submit" value="Register">
 </form>
 
-<form id="checkoutformlogin" action="code/login.php" method="post">
+<form id="checkoutformlogin" action="code/loginbuy.php" method="post">
     <div id="inputformlogin">
     <label><h1>Login:</h1><br>Email:</label><br>
     <input class='input-width' type="text" name="email" pattern="[a-zA-ZæøåÆØÅ0-9._%+\-]+@[a-zA-ZæøåÆØÅ0-9.\-]+\.[a-zA-ZæøåÆØÅ]{2,}$" required><br>

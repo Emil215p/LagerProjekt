@@ -1,4 +1,4 @@
-<form id="checkoutform" action="code/insertlogin.php" method="post">
+<form id="checkoutform" action="code/register.php" method="post">
     <div id="inputform">
         <label><h1>Create user:</h1><br>Name:</label><br>
     <input class='input-width' type="text" name="name" required><br>
