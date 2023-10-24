@@ -51,19 +51,19 @@ body {
 }
 
 .content {
-    margin-top: 50px;   
+    margin-top: 50px;
     margin-bottom: 75px;
 }
 
 #checkoutform {
-  padding: 10px;
-  border-radius: 10px;
-  width: 40%;
-  display: grid;
-  left: 50%;
-  top: 30%;
-  position: absolute;
-  transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+    display: grid;
+    left: 50%;
+    top: 30%;
+    position: absolute;
+    transform: translate(-50%, -50%);
 }
 
 #inputform {
@@ -75,16 +75,28 @@ body {
 }
 
 #checkoutformlogin {
-  padding: 10px;
-  border-radius: 10px;
-  width: 40%;
-  display: grid;
-  left: 50%;
-  top: 65%;
-  position: absolute;
-  transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+    display: grid;
+    left: 50%;
+    top: 65%;
+    position: absolute;
+    transform: translate(-50%, -50%);
 }
 
 #inputformlogin {
     margin-bottom: 15px;
+}
+
+#formkeepinside {
+
+}
+
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:valid {
+  border: 2px solid black;
 }
