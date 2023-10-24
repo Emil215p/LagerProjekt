@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
         $output .= "<div class=\"product-tile-footer\">";
         $output .= "<div class=\"product-title\">$name</div>";
         $output .= "<div class=\"product-price\">$price kr</div>";
-        $output .= "<div class=\"cart-action\"><input type=\"text\" class=\"product-quantity\" name=\"quantity\" value=\"1\"";
+        $output .= "<div class=\"cart-action\"><input type=\"text\" class=\"product-quantity\" name=\"quantity\" value=\"1\" pattern=\"[0-9]{1,}\" title=\"Only put numbers.\"";
         $output .= "size=\"2\" /><input type=\"submit\" value=\"Add to Cart\" class=\"btnAddAction\" /></div> </div> </form> </div>";
     }
     $result->free();

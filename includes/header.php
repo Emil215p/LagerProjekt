@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"/>
         <title>Emils good store</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="assets/css/styleforgeneral.css" type="text/css"> 
         <?php
         if ($page == 'pages/store.php') {

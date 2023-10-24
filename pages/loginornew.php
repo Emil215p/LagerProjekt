@@ -1,4 +1,7 @@
-<div id="formkeepinside">
+ <div class="alert alert-warning alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+  </div>
 <form id="checkoutform" action="code/register.php" method="post">
     <div id="inputform">
         <label><h1>Create user:</h1><br>Name:</label><br>
@@ -42,4 +45,3 @@
     </div>
     <input type="submit" class="btn btn-primary" name="login" value="Login">
 </form>
-</div>
