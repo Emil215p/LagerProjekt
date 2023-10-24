@@ -32,6 +32,18 @@
     margin: 10px 0px;
 }
 
+
+#checkoutbutton {
+    background-color: #ffffff;
+    border: #023020 1px solid;
+    padding: 5px 10px;
+    color: #023020;
+    float: left;
+    text-decoration: none;
+    border-radius: 3px;
+    margin: 10px 0px;
+}
+
 .btnAddAction {
     padding: 5px 10px;
     margin-left: 5px;
@@ -121,4 +133,8 @@
     color: Beige;
     padding: 20px;
     width: 100%;
+}
+
+#formkeepinside {
+
 }

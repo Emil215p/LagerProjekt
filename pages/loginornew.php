@@ -1,3 +1,4 @@
+<div id="formkeepinside">
 <form id="checkoutform" action="code/register.php" method="post">
     <div id="inputform">
         <label><h1>Create user:</h1><br>Name:</label><br>
@@ -41,3 +42,4 @@
     </div>
     <input type="submit" class="btn btn-primary" name="login" value="Login">
 </form>
+</div>

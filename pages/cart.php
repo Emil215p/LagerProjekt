@@ -43,7 +43,7 @@ if (isset($_SESSION["cart_item"])) {
                     <td align="right" colspan="2"><strong><?php echo number_format($total_price, 2) . "kr"; ?></strong></td>
                     <td></td>
                 </tr>
-                <button name="button" onclick="location.href='index.php?page=checkout'" type="button">Click Here</button> 
+                <button name="button" id="checkoutbutton" onclick="location.href='index.php?page=checkout'" type="button">Checkout</button> 
             </tbody>
         </table>
     <?php
