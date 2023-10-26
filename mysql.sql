@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 -- Database: `emko01_skp_dp_sde_dk`
 --
 CREATE DATABASE IF NOT EXISTS `LagerProjekt` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
-USE `emko01_skp_dp_sde_dk`;
+USE `LagerProjekt`;
 
 -- --------------------------------------------------------
 
