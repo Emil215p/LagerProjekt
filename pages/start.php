@@ -1,3 +1,3 @@
-<h1>Emils store</h1>
-<p>Buy what you want please.
-<br>We specialize in everything from computers to screens, we know how important lasagna is, too.</p>
+<h1>&nbsp;Emils store</h1>
+<p>&nbsp;Buy what you want please.
+<br>&nbsp;We specialize in everything from computers to screens, we know how important lasagna is, too.</p>
