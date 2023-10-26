@@ -7,14 +7,12 @@
  */
 interface IConnectInfo {
 
-    const CONN_HOST = 'localhost'; //
-    const CONN_USER = 'emko01_skp-dp_sde_dk';
-    const CONN_PASS = 'pqk5235q'; // ny FTP user: skp-admin pass: pqk5235q
-    const CONN_DB = 'emko01_skp_dp_sde_dk';
-    const CONN_PORT = 2222;
-    const MYSQL_CHARSET = 'utf8';
+    const CONN_HOST = ''; //put hostname
+    const CONN_USER = ''; //put username
+    const CONN_PASS = ''; //put password (if you have one)
+    const CONN_DB = ''; //put database name
+    const CONN_PORT = ; //put port number
+    const MYSQL_CHARSET = 'utf8'; //database charset, utf8 is usually fine.
 
     public static function doConnect();
 }
-
-// Administration af din database, finder du påadressen: skp-dp.sde.dk/phpmyadmin
